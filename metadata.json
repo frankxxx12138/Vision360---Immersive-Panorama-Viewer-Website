@@ -1,0 +1,7 @@
+{
+  "name": "Vision360 - Immersive Panorama Viewer",
+  "description": "A high-performance 360-degree panorama viewer built with A-Frame and React, featuring smooth desktop navigation and mobile gyroscope support.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

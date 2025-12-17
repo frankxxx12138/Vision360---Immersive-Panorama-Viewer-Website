@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vision 360</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- A-Frame 1.6.0 (Built on Three.js r163) -->
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <!-- fflate for EXR decoding -->
+    <script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/lib/browser.min.js"></script>
+    
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js",
+    "three/examples/jsm/loaders/RGBELoader.js": "https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/loaders/RGBELoader.js",
+    "three/examples/jsm/loaders/EXRLoader.js": "https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/loaders/EXRLoader.js",
+    "react/": "https://esm.sh/react@19.0.0/",
+    "react-dom/": "https://esm.sh/react-dom@19.0.0/",
+    "three/": "https://esm.sh/three@^0.182.0/"
+  }
+}
+</script>
+
+    <script>
+      // Global configuration for loaders
+      window.fflate = window.fflate || {};
+    </script>
+    <style>
+      body { margin: 0; overflow: hidden; font-family: sans-serif; background-color: #000; }
+      
+      /* --- Customization for A-Frame VR/Fullscreen Button --- */
+      .a-enter-vr-button, .a-enter-ar-button {
+        /* Reduced size to make it more snug around the icon */
+        width: 40px !important;
+        height: 40px !important;
+        bottom: 24px !important;
+        right: 24px !important;
+        background-color: rgba(0, 0, 0, 0.4) !important;
+        border-radius: 10px !important; /* Slightly smaller radius for smaller button */
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        
+        /* Icon sizing and positioning - Increased from 26px to 30px */
+        background-size: 50px 50px !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+      }
+      
+      /* Hover state: Light Grey background */
+      .a-enter-vr-button:hover, .a-enter-ar-button:hover {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        border-color: rgba(255, 255, 255, 0.4) !important;
+        transform: scale(1.05);
+      }
+
+      /* Hide the original circular mask background */
+      .a-enter-vr {
+        background: none !important;
+      }
+
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
